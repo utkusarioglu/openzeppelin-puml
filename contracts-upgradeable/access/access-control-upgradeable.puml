@@ -1,0 +1,28 @@
+@startuml OpenZeppelin Contracts Upgradeable Access Control contract diagram
+title OpenZeppelin Contracts Upgradeable Access Control contract diagram
+
+!startsub AccessControlUpgradeableContract
+package openzeppelin {
+  package contracts-upgradeable {
+    package access {
+      object OwnershipTransferred<<event>> {
+        address previousOwner
+        address newOwner
+      }
+      class AccessControlUpgradeable<<contract>> {
+        -@initializer()
+        -@onlyOwner()
+        #constructor()
+        +owner()
+        +renounceOwnership()
+        +transferOwnership(newOwner)
+        *initializer()
+      }
+
+      AccessControlUpgradeable -> OwnershipTransferred : emits
+    }
+  }
+}
+!endsub
+
+@enduml
