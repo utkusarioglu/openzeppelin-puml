@@ -1,0 +1,22 @@
+@startuml OpenZeppelin Transfer event
+!include ../../theme.puml
+
+title OpenZeppelin Transfer event
+
+!startsub TransferEvent
+package openzeppelin {
+  package contracts-upgradeable {
+    package token {
+      package ERC721 {
+        object Transfer<<event>> {
+          address from
+          address to
+          uint256 tokenId
+        }
+      }
+    }
+  }
+}
+!endsub
+
+@enduml

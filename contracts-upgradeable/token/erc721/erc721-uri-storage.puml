@@ -1,0 +1,25 @@
+@startuml Openzeppelin contract diagram
+!include ../../theme.puml
+title OpenZeppelin contract diagram
+
+!includesub erc721.puml!ERC721
+
+!startsub ERC721URIStorageContract
+package openzeppelin {
+  package contracts-upgradeable {
+    package token {
+      package ERC721 {
+        class ERC721URIStorage<<contract>> {
+          +string tokenURI(tokenId)
+          +void _setTokenURI(tokenId, _tokenURI)
+          +void _burn(tokenId)
+        }
+      }
+    }
+  } 
+}
+!endsub
+
+ERC721URIStorage --|> ERC721 : extends
+
+@enduml

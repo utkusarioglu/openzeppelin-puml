@@ -1,0 +1,21 @@
+@startuml OpenZeppelin Approval event
+!include ../../theme.puml
+title OpenZeppelin Approval event
+
+!startsub ApprovalEvent
+package openzeppelin {
+  package contracts-upgradeable {
+    package token {
+      package ERC721 {
+        object Approval<<event>> {
+          address owner
+          address approved
+          uint256 tokenId
+        }
+      }
+    }
+  }
+}
+!endsub
+
+@enduml

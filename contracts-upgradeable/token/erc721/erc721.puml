@@ -1,0 +1,35 @@
+@startuml Openzeppelin ERC721 contract
+!include ../../theme.puml
+title Openzeppelin ERC721 contract
+
+!include transfer.event.puml
+!include approval.event.puml
+!include approval-for-all.event.puml
+
+!startsub ERC721Contract
+package openzeppelin {
+  package contracts-upgradeable {
+    package token {
+      package ERC721 {
+        class ERC721<<contract>> {
+          *uint256 balanceOf(owner)
+          *address ownerOf(tokenId)
+          *void safeTransferFrom(from, to, tokenId)
+          *void transferFrom(from, to, tokenId)
+          *void approve(to, tokenId)
+          *address getApproved(tokenId)
+          *void setApprovalForAll(operator, _approved)
+          *bool isApprovedForAll(owner, operator)
+          *void safeTransferFrom(from, to, tokenId, data)
+        }
+        
+        ERC721 --> Transfer : emits
+        ERC721 --> Approval : emits
+        ERC721 --> ApprovalForAll : emits 
+      } 
+    } 
+  }
+}
+!endsub
+
+@enduml
