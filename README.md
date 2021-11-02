@@ -16,12 +16,13 @@ Because of the above, we had to come up with a convention that could predictably
 and easily represent solidity concepts while staying close to UML as much as 
 possible. With some recommendations from [Marchesi et al.](https://arxiv.org/ftp/arxiv/papers/1809/1809.09596.pdf), we came up with the following rules: 
 
-- External attributes will be represented with the symbol *
-- modifiers are prefixed with the symbol "@" to liken them to decorators
-in many popular languages. Their visibility is set set as private.
-- Modifiers are applied as stereotypes. As an example `@onlyOwner()` would be applied as `void foo() <<onlyOwner>>`. If the modifier requires params, the stereotype is declared with parens.
+- External attributes will be represented with the symbol `*`
+- modifiers are prefixed with the symbol `@` to liken them to decorators
+in many popular languages. Their visibility is set set as private through `-`.
+- Modifiers are applied as stereotypes. As an example `@onlyOwner()` would be applied as `void foo() <<onlyOwner>>`. If the modifier requires params, the stereotype is declared with parentheses like a normal function declaration.
 - Immutable types use the stereotype `<<constant>>`
 - Events are declared as `object <<event>>`
+- Errors are declared as `object <<error>>`
 - Structs are declared as `object <<struct>>`
 - contracts are declared as `class <<contract>>`
 - libraries are declared as `class <<library>>`
