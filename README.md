@@ -24,8 +24,8 @@ in many popular languages. Their visibility is set set as private through `-`.
 - Events are declared as `object <<event>>`
 - Errors are declared as `object <<error>>`
 - Structs are declared as `object <<struct>>`
-- contracts are declared as `class <<contract>>`
-- libraries are declared as `class <<library>>`
+- Contracts are declared as `class <<contract>>`
+- Libraries are declared as `class <<library>>`
 
 If you have any ideas on better representation of these concepts, please
 open an issue or send a pull request.
