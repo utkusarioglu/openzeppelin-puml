@@ -1,0 +1,19 @@
+@startuml OpenZeppelin Contracts Upgradeable Counters contract diagram
+title OpenZeppelin Contracts Upgradeable Counters contract diagram
+
+!startsub CountersUpgradeableLibrary
+package openzeppelin {
+  package contracts-upgradeable {
+    package utils {
+      class CountersUpgradeable<<library>> {
+        #current(counter)
+        #increment(counter)
+        #decrement(counter)
+        #reset(counter)  
+      }
+    }
+  }
+}
+!endsub
+
+@enduml
