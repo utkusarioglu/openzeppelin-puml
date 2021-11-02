@@ -16,7 +16,7 @@ package openzeppelin {
         +owner()
         +renounceOwnership()
         +transferOwnership(newOwner)
-        *initializer()
+        *initializer() <<initializer>>
       }
 
       AccessControlUpgradeable -> OwnershipTransferred : emits
