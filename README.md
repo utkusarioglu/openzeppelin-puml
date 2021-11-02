@@ -5,3 +5,26 @@ This repo contains common diagrams for OpenZeppelin contracts written in PlantUM
 ## Usage
 
 You can clone this repo as a submodule and reference it using `!include` or `!includesub`.
+
+## Notes on conventions
+
+Uml lacks conventions for some of the commonly used features of solidity. 
+These include concepts such as modifiers, external access, events, errors and
+a bunch of others. 
+
+Because of the above, we had to come up with a convention that could predictably
+and easily represent solidity concepts while staying close to UML as much as 
+possible. With some recommendations from [Marchesi et al.](https://arxiv.org/ftp/arxiv/papers/1809/1809.09596.pdf), we came up with the following rules: 
+
+- External attributes will be represented with the symbol *
+- modifiers are prefixed with the symbol "@" to liken them to decorators
+in many popular languages. Their visibility is set set as private.
+- Modifiers are applied as stereotypes. As an example `@onlyOwner()` would be applied as `void foo() <<onlyOwner>>`. If the modifier requires params, the stereotype is declared with parens.
+- Immutable types use the stereotype `<<constant>>`
+- Events are declared as `object <<event>>`
+- Structs are declared as `object <<struct>>`
+- contracts are declared as `class <<contract>>`
+- libraries are declared as `class <<library>>`
+
+If you have any ideas on better representation of these concepts, please
+open an issue or send a pull request.
