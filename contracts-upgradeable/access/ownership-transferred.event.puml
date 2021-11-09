@@ -1,0 +1,17 @@
+@startuml OpenZeppelin Contracts OwnershipTransferred event
+title OpenZeppelin Contracts OwnershipTransferred event
+
+!startsub OwnershipTransferredEvent
+package openzeppelin {
+  package contracts-upgradeable {
+    package access {
+      object OwnershipTransferred<<event>> {
+        address previousOwner
+        address newOwner
+      }
+    }
+  }
+}
+!endsub
+
+@enduml
