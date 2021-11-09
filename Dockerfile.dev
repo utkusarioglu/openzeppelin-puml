@@ -1,0 +1,4 @@
+FROM plantuml/plantuml-server:tomcat
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install git -y
